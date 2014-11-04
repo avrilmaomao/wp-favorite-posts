@@ -9,12 +9,14 @@ It extends json api (if installed) to provide a friendly interface for mobile ap
 	 cookie: optional
 
 2. remove fav
+
   method：json=wpfp/remove
   params：
 	postid：required 
 	cookie：optional
 
 3. get a user's fav postids
+
   method：json=wpfp/lists
   params：
          cookie ：optional
