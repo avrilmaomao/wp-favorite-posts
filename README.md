@@ -1,6 +1,16 @@
-# WP Favorite Posts
+This wordpress plugin is based on WP Favorite Posts as listed below.
+It extends json api (if installed) to provide friendly interface for mobile apps or else.
 
-WP Favorite Posts is a WordPress plugin [http://wordpress.org/plugins/wp-favorite-posts](http://wordpress.org/plugins/wp-favorite-posts)
 
-* **Contributors**: [@hberberoglu](https://github.com/hberberoglu), [@mustafauysal](https://github.com/mustafauysal), [@mtedwards](https://github.com/mtedwards)
-* **Contributing**: Contributions are more than welcome. Please submit pull requests against the [master branch](https://github.com/hberberoglu/wp-favorite-posts). Thanks!
+
+#About WP Favorite Posts
+
+[http://wordpress.org/plugins/wp-favorite-posts]
+
+#About JSON API
+
+[https://wordpress.org/plugins/json-api]
+
+#About JSON USER API
+
+[https://wordpress.org/plugins/json-api-user/]

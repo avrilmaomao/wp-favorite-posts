@@ -103,13 +103,21 @@ function wpfp_remove_favorite($post_id = "") {
     else return false;
 }
 
-function wpfp_die_or_go($str) {
+function wpfp_die_or_go($str,$is_succ = true) {
     global $ajax_mode;
-    if ($ajax_mode):
-        die($str);
-    else:
-        wp_redirect($_SERVER['HTTP_REFERER']);
-    endif;
+	if (wpfp_is_json_api()){
+		if($is_succ){
+			die(json_encode(array('status'=>'ok','message'=>$str)));
+		}else{
+			die(json_encode(array(('status')=>'error','error'=>$str)));
+		}
+	}else{
+	    if ($ajax_mode):
+	        die($str);
+	    else:
+	        wp_redirect($_SERVER['HTTP_REFERER']);
+	    endif;
+	}
 }
 
 function wpfp_add_to_usermeta($post_id) {
@@ -457,4 +465,33 @@ function wpfp_cookie_warning() {
 function wpfp_get_option($opt) {
     $wpfp_options = wpfp_get_options();
     return htmlspecialchars_decode( stripslashes ( $wpfp_options[$opt] ) );
+}
+
+/**
+ * Extend JSON API Plugin
+ *
+ * More about json api: https://wordpress.org/plugins/json-api/other_notes
+ */
+
+// Add a new controller
+add_filter('json_api_controllers', 'add_wpfp_controller');
+function add_wpfp_controller($controllers) {
+	// Corresponds to the class JSON_API_MyController_Controller
+	$controllers[] = 'WPFP';
+	return $controllers;
+}
+
+// Register the source file for JSON_API_Widgets_Controller
+add_filter('json_api_wpfp_controller_path', 'wpfp_controller_path');
+function wpfp_controller_path($default_path) {
+	return __DIR__ . '/WPFPController.php';
+}
+
+//check if its'a json api request
+function wpfp_is_json_api(){
+	global $json_api;
+	if (is_object($json_api)){
+		return true;
+	}
+	return false;
 }
