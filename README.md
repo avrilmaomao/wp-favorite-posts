@@ -1,6 +1,27 @@
 This wordpress plugin is based on WP Favorite Posts as listed below.
-It extends json api (if installed) to provide friendly interface for mobile apps or else.
+It extends json api (if installed) to provide a friendly interface for mobile apps.
 
+1. add fav
+
+method： json=wpfp/add
+params：
+	   postid: required
+	   cookie: optional
+示例：
+
+2. remove fav
+method：json=wpfp/remove
+params：
+	postid：required 
+	cookie：optional
+
+
+
+3. get a user's fav postids
+地址：json=wpfp/lists
+
+params：
+    cookie ：optional
 
 
 #About WP Favorite Posts
