@@ -3,25 +3,21 @@ It extends json api (if installed) to provide a friendly interface for mobile ap
 
 1. add fav
 
-method： json=wpfp/add
-params：
-	   postid: required
-	   cookie: optional
-示例：
+  method： json=wpfp/add
+  params：
+	 postid: required
+	 cookie: optional
 
 2. remove fav
-method：json=wpfp/remove
-params：
+  method：json=wpfp/remove
+  params：
 	postid：required 
 	cookie：optional
 
-
-
 3. get a user's fav postids
-地址：json=wpfp/lists
-
-params：
-    cookie ：optional
+  method：json=wpfp/lists
+  params：
+         cookie ：optional
 
 
 #About WP Favorite Posts
