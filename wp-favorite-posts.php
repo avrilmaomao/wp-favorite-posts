@@ -490,7 +490,11 @@ function wpfp_controller_path($default_path) {
 //check if its'a json api request
 function wpfp_is_json_api(){
 	global $json_api;
-	if (is_object($json_api)){
+	if (!is_object($json_api)){
+		return false;
+	}
+	$controller = $json_api->query->get_controller();
+	if(!empty($controller)){
 		return true;
 	}
 	return false;
