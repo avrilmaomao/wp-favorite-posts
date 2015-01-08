@@ -27,7 +27,7 @@ Author URI: http://nxsn.com
 
 */
 
-define('WPFP_PATH', plugins_url() . '/wp-favorite-posts');
+define('WPFP_PATH', plugins_url() . '/wp-favorite-posts-extended');
 define('WPFP_META_KEY', "wpfp_favorites");
 define('WPFP_USER_OPTION_KEY', "wpfp_useroptions");
 define('WPFP_COOKIE_KEY', "wp-favorite-posts");
